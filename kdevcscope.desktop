@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Service
+Comment=CScope for KDevelop
+Name=cscope
+GenericName=CScope
+ServiceTypes=KDevelop/Plugin
+X-KDE-Library=kdevcscopeplugin
+X-KDE-PluginInfo-Name=kdevcscopeplugin
+X-KDE-PluginInfo-Author=Oleh Kravchenko
+X-KDE-PluginInfo-Email=oleg@kaa.org.ua
+X-KDE-PluginInfo-License=GPL
+X-KDevelop-Version=14
+X-KDevelop-Category=Global
+X-KDevelop-Mode=GUI
+X-KDevelop-LoadMode=AlwaysOn
