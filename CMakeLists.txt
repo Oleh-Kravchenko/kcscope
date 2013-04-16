@@ -14,10 +14,18 @@ INCLUDE_DIRECTORIES(
 	${CMAKE_SOURCE_DIR}
 )
 
-KDE4_ADD_PLUGIN(kdevcscopeplugin
+SET(KCSCOPE_SRC
 	src/projectviewplugin.h
 	src/projectviewplugin.cpp
+	src/kcscope.h
+	src/kcscope.cpp
 )
+
+KDE4_ADD_UI_FILES(KCSCOPE_SRC
+	src/kcscope.ui
+)
+
+KDE4_ADD_PLUGIN(kdevcscopeplugin ${KCSCOPE_SRC})
 
 TARGET_LINK_LIBRARIES(kdevcscopeplugin ${KDEVPLATFORM_INTERFACES_LIBRARIES} ${KDEVPLATFORM_LANGUAGE_LIBRARIES})
 
