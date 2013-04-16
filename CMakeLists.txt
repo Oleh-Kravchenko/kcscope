@@ -15,8 +15,8 @@ INCLUDE_DIRECTORIES(
 )
 
 SET(KCSCOPE_SRC
-	src/projectviewplugin.h
-	src/projectviewplugin.cpp
+	src/kcscopeplugin.h
+	src/kcscopeplugin.cpp
 	src/kcscope.h
 	src/kcscope.cpp
 )
