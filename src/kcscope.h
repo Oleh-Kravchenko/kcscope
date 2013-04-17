@@ -3,6 +3,8 @@
 
 #include <QtGui/qwidget.h>
 
+#include <QStandardItemModel>
+
 namespace Ui
 {
 	class KCScopeWidget;
@@ -13,7 +15,7 @@ class KCScopeWidget:public QWidget
 Q_OBJECT
 
 public:
-	KCScopeWidget(QWidget* parent);
+	KCScopeWidget(QWidget* parent, QAbstractItemModel* model);
 
 	virtual ~KCScopeWidget();
 

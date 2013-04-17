@@ -92,22 +92,5 @@
   </layout>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>ClearResults</sender>
-   <signal>clicked()</signal>
-   <receiver>Results</receiver>
-   <slot>reset()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>965</x>
-     <y>16</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>511</x>
-     <y>134</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

@@ -25,34 +25,34 @@ K_EXPORT_PLUGIN(
 
 using namespace KDevelop;
 
-class KDevProjectViewFactory: public KDevelop::IToolViewFactory
+class KDevKCScopeFactory: public KDevelop::IToolViewFactory
 {
-	public:
-		KDevProjectViewFactory(QAbstractItemModel* model):model(model) {}
-		
-		virtual QWidget* create(QWidget* parent = 0)
-		{
-			KCScopeWidget* view = new KCScopeWidget(parent);
+public:
+	KDevKCScopeFactory(QAbstractItemModel* model):model(model) {}
 
-			return(view);
-		}
+	virtual QWidget* create(QWidget* parent = 0)
+	{
+		KCScopeWidget* view = new KCScopeWidget(parent, model);
 
-		virtual Qt::DockWidgetArea defaultPosition() { return Qt::LeftDockWidgetArea; }
+		return(view);
+	}
 
-		virtual QString id() const
-		{
-			return("org.kdevelop.KCScopePlugin");
-		}
+	virtual Qt::DockWidgetArea defaultPosition() { return Qt::LeftDockWidgetArea; }
 
-	private:
-		QAbstractItemModel *model;
+	virtual QString id() const
+	{
+		return("org.kdevelop.KCScopePlugin");
+	}
+
+private:
+	QAbstractItemModel *model;
 };
 
 KCScopePlugin::KCScopePlugin(QObject* parent, const QVariantList&):KDevelop::IPlugin(KCScopeFactory::componentData(), parent)
 {
 	m_model = new QStandardItemModel(this);
 
-	core()->uiController()->addToolView(i18n("KCScope"), new KDevProjectViewFactory(m_model));
+	core()->uiController()->addToolView(i18n("KCScope"), new KDevKCScopeFactory(m_model));
 
 	connect(core()->projectController(), SIGNAL(projectOpened(KDevelop::IProject*)), this, SLOT(projectOpened(KDevelop::IProject*)));
 	connect(core()->projectController(), SIGNAL(projectClosed(KDevelop::IProject*)), this, SLOT(projectClosed(KDevelop::IProject*)));

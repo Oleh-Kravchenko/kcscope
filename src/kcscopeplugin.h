@@ -2,6 +2,7 @@
 #define __KCSCOPE_PUGIN_H
 
 #include <interfaces/iplugin.h>
+#include <interfaces/isession.h>
 
 #include <QVariant>
 #include <QStandardItemModel>
@@ -19,17 +20,17 @@ namespace KDevelop
 
 class KCScopePlugin : public KDevelop::IPlugin
 {
-	Q_OBJECT
+Q_OBJECT
 
-	public:
-		KCScopePlugin(QObject* parent, const QVariantList& args);
+public:
+	KCScopePlugin(QObject* parent, const QVariantList& args);
 
-	public slots:
-		void projectClosed(KDevelop::IProject*);
+public slots:
+	void projectClosed(KDevelop::IProject*);
 
-		void projectOpened(KDevelop::IProject*);
+	void projectOpened(KDevelop::IProject*);
 
-	private:
+private:
 		QStandardItemModel* m_model;
 };
 
